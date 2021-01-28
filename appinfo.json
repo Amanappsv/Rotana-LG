@@ -1,10 +1,11 @@
 {
-  "id": "com.domain.app",
-  "version": "0.0.1",
-  "vendor": "My Company",
-  "type": "web",
-  "main": "index.html",
-  "title": "Rotana-1",
-  "icon": "icon.png",
-  "largeIcon": "largeIcon.png"
+    "id": "com.domain.app",
+    "version": "0.0.1",
+    "vendor": "My Company",
+    "type": "web",
+    "main": "index.html",
+    "title": "Rotana-1",
+    "icon": "icon.png",
+    "largeIcon": "largeIcon.png",
+    "disableBackHistoryAPI": true
 }
