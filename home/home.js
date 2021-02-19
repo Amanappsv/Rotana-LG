@@ -451,8 +451,8 @@ function allChannels(){
 	   var row = document.getElementById("row-channel " + rowId);
        var temp = `
      
-       <div id="card ${index}" class="col-2">
-       <img id="all_img_${index}" src="${result["poster"]}" class="appImg">
+       <div onClick="moveOk()" onmouseover="inCard(this.id)" onmouseout="outCard(this.id)" id="card ${index}" class="col-2">
+       <img  id="all_img_${index}" src="${result["poster"]}" class="appImg">
        </div>
        
        `;
@@ -470,6 +470,32 @@ function allChannels(){
 }
 
 
+function inCard(pos){
+	console.log("in"+ pos);
+	
+	if(pos.startsWith("card")){
+		  removeFocus("activeAll");
+	      removeFocus("setBoxShadow");
+		var n = pos.lastIndexOf("card");
+		  selectedAllPos = pos.substring(n+5);
+		  setFocus("card " + selectedAllPos, 'activeAll');
+		  setFocus('all_img_' +  selectedAllPos, 'setBoxShadow');
+
+
+//		  console.log(selectedAllPos);
+		  
+	}
+	
+}
+
+function outCard(pos){
+	console.log("out");
+//	if(pos.startsWith("card")){
+//	  removeFocus("activeAll");
+//      removeFocus("setBoxShadow");
+//      }
+
+}
 
 
 function setFocus(id, clas) {

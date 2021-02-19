@@ -377,7 +377,35 @@ function moveRight(){
 	}
 }
 
+function outCard(pos){
+	console.log("out");
+//	if(pos.startsWith("card")){
+//	  removeFocus("activeAll");
+//      removeFocus("setBoxShadow");
+//      }
 
+}
+
+
+function inCard(pos){
+	
+	
+	console.log(pos);
+	
+	if(pos.startsWith("card-all")){
+		
+		 removeFocus("activeRecent");
+	      removeFocus("setBoxShadow");
+		var n = pos.lastIndexOf("card-all");
+		selectedRecentPos = pos.substring(n+9);
+	   
+	    setFocus("card-all " + selectedRecentPos, 'activeRecent');
+		 setFocus('recent_img_' +  selectedRecentPos, 'setBoxShadow');
+
+	  
+	}
+	
+}
 
 function moveUp(){
 	
@@ -477,16 +505,20 @@ function makeCards(){
 		
 	  	if(index === 0 ){
       		
-             showcase.innerHTML += ` <div id="card-all ${index}" class="col-12">
-            <img class="cardImg" id="recent_img_${index}" src="../images/splash.png" alt="Card image cap">
-            </div>`;
+             showcase.innerHTML += ` 
+             <div id="card-all ${index}" onClick="moveOk()" onmouseover="inCard(this.id)" onmouseout="outCard(this.id)" class="col-12">
+            <img class="cardImg" id="recent_img_${index}" src="${result["poster"]}" alt="Card image cap">
+            </div>`
+            ;
              
       	}
       	else {
       	
-              showcase.innerHTML += ` <div id="card-all ${index}" class="col-12 mt-4">
+              showcase.innerHTML += 
+            	  ` <div  id="card-all ${index}" onClick="moveOk()" onmouseover="inCard(this.id)" onmouseout="outCard(this.id)" class="col-12 mt-4">
               <img class="cardImg" id="recent_img_${index}"  src="${result["poster"]}"  alt="Card image cap">
-              </div>`;
+              </div>`
+              ;
 
 				
 			}
@@ -508,6 +540,9 @@ function makeCards(){
 
 function setFocus(id, clas) {
 
+	console.log("id-------" + id);
+	console.log("class-------" + clas);
+	
     document.getElementById(id).classList.add(clas);
 
 }

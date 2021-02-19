@@ -30,8 +30,8 @@
                 <div class="d-flex justify-content-around">
                      <img style="margin-left: 27px" class="liveImg" src="../images/live.svg" alt="Card image cap">
                      
-                      <img id="btn_play" class="liveImg" src="../images/play.svg" alt="Card image cap" style="display : none;">
-                      <i id="btn_pause" class="fas fa-play pause-btn" style="display: block;"></i>
+                      <img id="btn_play" onclick="moveOk()" class="liveImg" src="../images/play.svg" alt="Card image cap" style="display : none;">
+                      <i id="btn_pause" onclick="moveOk()" class="fas fa-play pause-btn" style="display: block;"></i>
                      
                        <img class="liveImg" src="../images/volume.svg" alt="Card image cap">
  
@@ -47,8 +47,8 @@
             </div>
     </div>
     
-     <img class="Openimg" src="../images/equal.svg" alt="Card image cap" onclick="openNav()">
-     <img id="closeBtn" class="closeimg" src="../images/cross.svg" alt="Card image cap" onclick="closeNav()">
+     <img onclick="moveLeft()" class="Openimg" src="../images/equal.svg" alt="Card image cap" onclick="openNav()">
+     <img onclick="moveRight()" id="closeBtn" class="closeimg" src="../images/cross.svg" alt="Card image cap" onclick="closeNav()">
     <div id="mySidenav" class="sidenav">
         <div class="container-fluid">
             <div class="row" id="container-fluid_id">
